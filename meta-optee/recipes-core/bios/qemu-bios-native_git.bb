@@ -10,7 +10,7 @@ PV = "0.0+git${SRCPV}"
 # TODO: This package is missing any license information.  We can use a
 # source file (which has the license), but this will be wrong when the
 # revision changes.
-LIC_FILES_CHKSUM = "file://bios/main.c;md5=5dacb7c0ae015e31d721f15aa1fa3f51"
+LIC_FILES_CHKSUM = "file://bios/main.c;md5=01e0350fc6da2e564dc71b422f6c3354"
 
 S = "${WORKDIR}/git/"
 
