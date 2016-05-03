@@ -13,6 +13,11 @@ KERNEL_BIOS ?= "${DEPLOY_DIR_IMAGE}/zImage"
 # mountable.
 BIOS_INITRD ?= "${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.rootfs.cpio.gz"
 
+# If the rootfs is not set, BIOS_ROOT_DEVICE should be set to
+# something like "root=/dev/sda" for where the given image will be
+# accessed.
+BIOS_ROOT_DEVICE ?= ""
+
 IMAGE_CMD_bios () {
     libgcc=$(find ${STAGING_DIR_HOST} -name libgcc.a; head -1)
     rm -rf "${WORKDIR}/bios-work"
@@ -28,6 +33,7 @@ IMAGE_CMD_bios () {
         BIOS_NSEC_BLOB=${KERNEL_BIOS} \
         BIOS_NSEC_ROOTFS=${BIOS_INITRD} \
         BIOS_SECURE_BLOB=${STAGING_DIR_HOST}/lib/firmware/tee.bin \
+        BIOS_ROOT_DEVICE="${BIOS_ROOT_DEVICE}" \
         PLATFORM_FLAVOR=virt
     cp ${WORKDIR}/bios-work/bios.bin ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.rootfs.bios
 }

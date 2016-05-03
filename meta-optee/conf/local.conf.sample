@@ -32,6 +32,11 @@ PREFERRED_PROVIDER_virtual/kernel = "linux-optee"
 
 IMAGE_CLASSES = "image_types_bios"
 
+# Uncomment these two lines to have the qemu image use a mounted
+# filesystem rather than an initrd.
+#BIOS_INITRD = "/dev/null"
+#BIOS_ROOT_DEVICE = "root=/dev/sda rootfstype=ext4"
+
 #
 # Where to place downloads
 #

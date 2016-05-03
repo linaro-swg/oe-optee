@@ -13,7 +13,9 @@ $root/usr/bin/qemu-system-arm \
 	-m 1058 \
 	-netdev user,id=unet,hostfwd=tcp::5001-:22,hostfwd=tcp::2159-:2159 \
 	-device virtio-net-device,netdev=unet \
-	-drive file=${deploy}/optee-image-qemu-optee32.ext4,if=virtio,format=raw \
+	-device virtio-scsi-device,id=scsi \
+	-drive file=${deploy}/optee-image-qemu-optee32.ext4,id=rootimg,if=none,format=raw \
+	-device scsi-hd,drive=rootimg
 
 exit 0
 
