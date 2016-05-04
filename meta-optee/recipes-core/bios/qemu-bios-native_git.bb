@@ -3,11 +3,9 @@ LICENSE = "BSD"
 
 inherit native
 
-SRCREV = "dad8551a66d3ca121ad1f2e577f68dbb4b8e76db"
+SRCREV = "7a495a6c8fc977febb1866eca3cb9e903769cd17"
 SRC_URI = "git://github.com/linaro-swg/bios_qemu_tz_arm.git \
            file://0001-Create-LICENSE-file.patch \
-           file://0002-Allow-initrd-to-be-empty.patch \
-           file://0003-Allow-the-kernel-command-line-to-be-configurable.patch \
 "
 PV = "0.0+git${SRCPV}"
 
