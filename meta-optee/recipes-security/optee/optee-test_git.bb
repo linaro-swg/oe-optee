@@ -5,17 +5,17 @@ SUMMARY = "OPTEE test"
 HOMEPAGE = "http://www.optee.org/"
 
 # TODO: Get the license files into the repo, and refer to them here.
-LICENSE = "CLOSED"
+LICENSE = "BSD"
 
 DEPENDS = "optee-os optee-client"
 
 SRC_URI = "git://github.com/OP-TEE/optee_test.git \
            file://0001-Silence-may-be-unset-CLang-warning.patch \
 "
-SRCREV = "eba256d9cf0d73bcd3957ce3dffbe1098681c2c6"
+SRCREV = "5bf536242b29bf5f1b578d79da076db96c46d0b7"
 PR = "r0"
 PV = "2.0.0+git${SRCPV}"
-# LIC_FILES_CHKSUM = "file://LICENSE;md5=69663ab153298557a59c67a60a743e5b"
+LIC_FILES_CHKSUM = "file://LICENSE.md;md5=daa2bcccc666345ab8940aab1315a4fa"
 
 S = "${WORKDIR}/git"
 

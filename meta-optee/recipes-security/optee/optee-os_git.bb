@@ -17,7 +17,7 @@ OPTEE_SHORT_MACHINE_qemu-optee32 = "vexpress"
 inherit deploy
 
 SRC_URI = "git://github.com/OP-TEE/optee_os.git"
-SRCREV = "7fd2e0b5473d2e774c44fbf95d72b6d6b0f1a0c7"
+SRCREV = "b44708c1c842a9e1ebb63c7f6b43774795669c7a"
 PR = "r0"
 PV = "2.0.0+git${SRCPV}"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=69663ab153298557a59c67a60a743e5b"
