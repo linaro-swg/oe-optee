@@ -6,3 +6,7 @@
 	path = bitbake
 	url = git://git.openembedded.org/bitbake
 	branch = 1.28
+[submodule "meta-openembedded"]
+	path = meta-openembedded
+	url = git://git.openembedded.org/meta-openembedded
+	branch = jethro
