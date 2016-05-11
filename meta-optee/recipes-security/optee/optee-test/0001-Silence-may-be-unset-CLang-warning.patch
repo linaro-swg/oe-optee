@@ -1,0 +1,25 @@
+From 5bc917bef5d91ddf268b39f9f4ed58989b4fee2e Mon Sep 17 00:00:00 2001
+From: Zoltan Kuscsik <zoltan.kuscsik@linaro.org>
+Date: Tue, 12 Apr 2016 12:28:20 +0200
+Subject: [PATCH] Silence may-be-unset CLang warning
+
+---
+ host/xtest/xtest_benchmark_1000.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/host/xtest/xtest_benchmark_1000.c b/host/xtest/xtest_benchmark_1000.c
+index 796ace6..dbd7e3e 100644
+--- a/host/xtest/xtest_benchmark_1000.c
++++ b/host/xtest/xtest_benchmark_1000.c
+@@ -85,7 +85,7 @@ static TEEC_Result run_chunk_access_test(enum storage_benchmark_cmd cmd,
+ 		uint32_t data_size, uint32_t chunk_size, struct test_record *rec)
+ {
+ 	TEE_Result res;
+-	uint32_t spent_time;
++	uint32_t spent_time = 0;
+ 
+ 	res = run_test_with_args(cmd, data_size, chunk_size, DO_VERIFY, 0,
+ 				&spent_time, NULL);
+-- 
+1.9.1
+
