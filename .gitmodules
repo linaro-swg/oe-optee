@@ -2,3 +2,7 @@
 	path = openembedded-core
 	url = git://git.openembedded.org/openembedded-core
 	branch = jethro
+[submodule "bitbake"]
+	path = bitbake
+	url = git://git.openembedded.org/bitbake
+	branch = 1.28
