@@ -8,6 +8,7 @@ BBFILES ?= ""
 BBLAYERS ?= " \
   ##OEROOT##/meta \
   ##OEROOT##/../meta-optee \
+  ##OEROOT##/../meta-openembedded/meta-oe \
   "
 
 BBLAYERS_NON_REMOVABLE ?= " \
