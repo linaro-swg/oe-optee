@@ -19,13 +19,13 @@ B = "${WORKDIR}/git/out"
 # always use ${S}/out, instead of ${B}.  This breaks 'devtool'.
 
 do_compile () {
-    oe_runmake -C ${S} DEBUG=1 EXPORT_DIR=${D}/usr build-libteec
-    oe_runmake -C ${S} DEBUG=1 EXPORT_DIR=${D}/usr build-tee-supplicant
+    oe_runmake -C ${S} EXPORT_DIR=${D}/usr build-libteec
+    oe_runmake -C ${S} EXPORT_DIR=${D}/usr build-tee-supplicant
 }
 
 do_install () {
     install -d ${D}/usr
-    oe_runmake -C ${S} DEBUG=1 EXPORT_DIR=${D}/usr install
+    oe_runmake -C ${S} EXPORT_DIR=${D}/usr install
 
     install -d ${D}/usr/bin
     install ${S}/out/tee-supplicant/tee-supplicant ${D}/usr/bin
