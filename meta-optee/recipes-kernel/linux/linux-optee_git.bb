@@ -8,6 +8,7 @@ PV = "4.5+git${SRCPV}"
 
 SRC_URI = "git://github.com/linaro-swg/linux.git;branch=optee \
            file://qemu.conf \
+           file://fvp.conf \
 "
 
 DESCRIPTION = "Kernel for optee, blah blah blah"
