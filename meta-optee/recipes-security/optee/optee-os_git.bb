@@ -8,11 +8,32 @@ LICENSE = "BSD"
 # SECTION = ""
 # DEPENDS = ""
 
-# Determine the optee os based on our build machine.
-OPTEE_MACHINE_qemuarm = "vexpress"
-OPTEE_MACHINE_qemu-optee32 = "vexpress-qemu_virt"
-
-OPTEE_SHORT_MACHINE_qemu-optee32 = "vexpress"
+# The variables are a bit overwhelming to try and set with Bitbake's
+# variable expansion, so just make the decision in Python.
+python () {
+    machine = d.getVar("MACHINE", True)
+    if machine == "qemu-optee32":
+        d.setVar("EXTRA_OEMAKE",
+            ("PLATFORM=vexpress-qemu_virt" +
+             " CFG_ARM64_core=n" +
+             " CROSS_COMPILE_core={0}" +
+             " CROSS_COMPILE_ta_arm32={0}" +
+             " ta-targets=ta_arm32").format(d.getVar("HOST_PREFIX", True)))
+        d.setVar("OPTEE_SHORT_MACHINE", "vexpress")
+        d.setVar("OPTEE_ARCH", "arm32")
+    elif machine == "fvp-optee64":
+        d.setVar("EXTRA_OEMAKE",
+            ("V=1 PLATFORM=vexpress-fvp" +
+             " CFG_ARM64_core=y" +
+             " CFG_ARM32_core=n" +
+             " CROSS_COMPILE_core={0}" +
+             " CROSS_COMPILE_ta_arm64={0}" +
+             " ta-targets=ta_arm64").format(d.getVar("HOST_PREFIX", True)))
+        d.setVar("OPTEE_SHORT_MACHINE", "vexpress")
+        d.setVar("OPTEE_ARCH", "arm64")
+    else:
+        bb.fatal("optee-os doesn't recognize this MACHINE")
+}
 
 inherit deploy
 
@@ -23,19 +44,6 @@ PV = "2.0.0+git${SRCPV}"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=69663ab153298557a59c67a60a743e5b"
 
 S = "${WORKDIR}/git"
-
-# TODO: These need to come from the machine so that we can use the
-# same recipe no matter which we build for.
-EXTRA_OEMAKE = "PLATFORM=${OPTEE_MACHINE}"
-EXTRA_OEMAKE += "CFG_ARM64_core=n"
-EXTRA_OEMAKE += "CROSS_COMPILE_core=${HOST_PREFIX}"
-EXTRA_OEMAKE += "CROSS_COMPILE_ta_arm32=${HOST_PREFIX}"
-EXTRA_OEMAKE += "ta-targets=ta_arm32"
-
-OPTEE_ARCH_armv7a = "arm32"
-OPTEE_ARCH_aarch64 = "arm64"
-OPTEE_ARCH_qemuarm = "arm32"
-OPTEE_ARCH_qemu-optee32 = "arm32"
 
 CFG_TEE_TA_LOG_LEVEL ?= "1"
 CFG_TEE_CORE_LOG_LEVEL ?= "1"
