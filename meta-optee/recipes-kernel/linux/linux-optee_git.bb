@@ -14,3 +14,5 @@ SRC_URI = "git://github.com/linaro-swg/linux.git;branch=optee \
 DESCRIPTION = "Kernel for optee, blah blah blah"
 
 S = "${WORKDIR}/git"
+
+KERNEL_DEVICETREE_fvp-optee64 = "arm/foundation-v8.dtb"
