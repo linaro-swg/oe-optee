@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# startup/shutdown script for the supplicant.
+
+set -e
+
+test -f /usr/bin/tee-supplicant || exit 0
+PIDFILE=/var/run/tee-supplicant.pid
+
+case "$1" in
+  start)
+    echo -n "Starting tee-supplicant: "
+    start-stop-daemon --start --background --exec /usr/bin/tee-supplicant
+    echo "done"
+    ;;
+  stop)
+    echo -n "Stopping tee-supplicant: "
+    start-stop-daemon --stop --exec /usr/bin/tee-supplicant
+    echo "done"
+    ;;
+  restart)
+    $0 stop
+    $0 start
+    ;;
+  *)
+    echo "Usage: tee-supplicant { start | stop | restart }" >&2
+    exit 1
+    ;;
+esac
