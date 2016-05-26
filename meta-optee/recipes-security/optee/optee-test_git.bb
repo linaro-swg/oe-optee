@@ -10,9 +10,8 @@ LICENSE = "BSD"
 DEPENDS = "optee-os optee-client"
 
 SRC_URI = "git://github.com/OP-TEE/optee_test.git \
-           file://0001-Silence-may-be-unset-CLang-warning.patch \
 "
-SRCREV = "5bf536242b29bf5f1b578d79da076db96c46d0b7"
+SRCREV = "90f23353528af7bb5bb3b8d60d1518f7a23e93c0"
 PR = "r0"
 PV = "2.0.0+git${SRCPV}"
 LIC_FILES_CHKSUM = "file://LICENSE.md;md5=daa2bcccc666345ab8940aab1315a4fa"
