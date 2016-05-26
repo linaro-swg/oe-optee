@@ -60,6 +60,7 @@ $ bitbake optee-image
 On my dev machine, this takes about 45 minutes the first time.  Later
 builds will be much faster as intermediate results will be cached.
 
+# Running on qemu.
 ## Run the image.
 You will need two other terminal windows to run the serial consoles
 used by qemu.  In one, run `./term.sh`, and in the other, run
@@ -73,9 +74,28 @@ something along the lines of:
 
 ```
 login: root
-# tee-supplicant &
 # xtest
 ```
+
+Note that the tee-supplicant will be started automatically by an init
+script.
+
+# Running on FVP.
+In addition to the QEMU 32-bit target, you can also build a 64-bit
+target that runs on ARM's FVP emulator.  Which target builds is
+determined by the MACHINE variable in build/conf/local.conf.  Set this
+to "fvp-optee64" to build the FVP 64-bit target.
+
+You will need to get the emulator yourself (ARM requires an acceptance
+to download, but otherwise does not charge for this emulator).  The
+runfvp.sh script assumes the emulator is extracted under
+Foundation_Platformpkg, but this can be changed by editing this
+script.  The script also assumes a different build directory (so that
+both platforms can be built at the same time).
+
+Run the runfvp.sh script, which will fire up two xterms for the two
+consoles, and a small monitor window to show the status of the
+emulator itself.
 
 # Hacking
 The [Yocto Project](https://www.yoctoproject.org/) has a lot of good
