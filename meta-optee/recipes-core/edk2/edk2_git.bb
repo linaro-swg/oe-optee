@@ -58,6 +58,8 @@ do_install () {
 do_install_append_hikey-optee64 () {
     install -m 644 ${S}/HisiPkg/HiKeyPkg/NonFree/mcuimage.bin \
         ${D}/lib/firmware
+    install -m 644 ${S}/Build/HiKey/RELEASE_GCC49/AARCH64/AndroidFastbootApp.efi \
+        ${D}/lib/firmware/fastboot.efi
 }
 
 FILES_${PN} = "/lib/firmware"
