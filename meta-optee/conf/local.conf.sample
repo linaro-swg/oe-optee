@@ -40,7 +40,7 @@ MACHINE ??= "qemux86"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-optee"
 
-IMAGE_CLASSES = "image_types_bios"
+IMAGE_CLASSES = "image_types_bios image_types_uefi"
 
 # Uncomment these two lines to have the qemu image use a mounted
 # filesystem rather than an initrd.
