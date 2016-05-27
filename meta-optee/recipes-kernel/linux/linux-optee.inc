@@ -17,12 +17,18 @@ python () {
         d.setVar("LINUX_OPTEE_CONFIGS",
             ("arch/arm64/configs/defconfig " +
                 "{0}/fvp.conf").format(d.getVar("WORKDIR", True)))
+    elif machine == "hikey-optee64":
+        d.setVar("LINUX_OPTEE_CONFIGS",
+            ("arch/arm64/configs/defconfig " +
+                "{0}/hikey.conf " +
+                "{0}/usb_net_dm9601.conf " +
+                "{0}/ftrace.conf").format(d.getVar("WORKDIR", True)))
     else:
         bb.fatal("Unsupported machine")
 }
 
 # Lets see what happens.
-COMPATIBLE_MACHINE = "(qemu-optee32|fvp-optee64)"
+COMPATIBLE_MACHINE = "(qemu|fvp|hikey)-optee(32|64)"
 KERNEL_IMAGETYPE ?= "Image"
 
 KERNEL_CONFIG_COMMAND () {
