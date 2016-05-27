@@ -31,6 +31,16 @@ python () {
              " ta-targets=ta_arm64").format(d.getVar("HOST_PREFIX", True)))
         d.setVar("OPTEE_SHORT_MACHINE", "vexpress")
         d.setVar("OPTEE_ARCH", "arm64")
+    elif machine == "hikey-optee64":
+        d.setVar("EXTRA_OEMAKE",
+            ("V=1 PLATFORM=hikey" +
+             " CFG_ARM64_core=y" +
+             " CFG_ARM32_core=n" +
+             " CROSS_COMPILE_core={0}" +
+             " CROSS_COMPILE_ta_arm64={0}" +
+             " ta-targets=ta_arm64").format(d.getVar("HOST_PREFIX", True)))
+        d.setVar("OPTEE_SHORT_MACHINE", "hikey")
+        d.setVar("OPTEE_ARCH", "arm64")
     else:
         bb.fatal("optee-os doesn't recognize this MACHINE")
 }
