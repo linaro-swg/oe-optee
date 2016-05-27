@@ -9,6 +9,8 @@ SRCREV = "b524fa27f56381bb0efa4944e36f50265113aee5"
 SRC_URI = " \
     git://git.savannah.gnu.org/grub.git \
     file://grub.configfile \
+    file://grub_uart0.cfg \
+    file://grub_uart3.cfg \
 "
 PV = "2.00+git${SRCPV}"
 
@@ -75,6 +77,8 @@ do_install () {
 do_deploy () {
     install -d ${DEPLOYDIR}
     install -m 644 ${B}/grubaa64.efi ${DEPLOYDIR}
+    install -m 644 ${WORKDIR}/grub_uart0.cfg ${DEPLOYDIR}
+    install -m 644 ${WORKDIR}/grub_uart3.cfg ${DEPLOYDIR}
 }
 
 addtask deploy before do_package after do_install
