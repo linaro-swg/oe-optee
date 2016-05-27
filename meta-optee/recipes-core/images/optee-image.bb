@@ -7,6 +7,7 @@ LICENSE = "MIT"
 #SECTION = ""
 
 DEPENDS_fvp-optee64 = "arm-tf"
+DEPENDS_hikey-optee64 = "arm-tf"
 
 # By default the image has quite a bit of stuff in it.  Uncomment
 # these few lines to only install the bare minimum, making a minimal
