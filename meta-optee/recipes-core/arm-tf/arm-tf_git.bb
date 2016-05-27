@@ -15,7 +15,7 @@ SRCREV_hikey-optee64 = "c006778cf5c97bd9ecc929620cb71c1b11a29480"
 SRC_URI_hikey-optee64 = "git://github.com/96boards-hikey/arm-trusted-firmware.git;branch=hikey"
 PV_hikey-optee64 = "1.1+git${SRCPV}"
 
-ARMTF_ARGS = "${@bb.fatal('EDK2 not supported on this platform')}"
+COMPATIBLE_MACHINE = "(fvp|hikey)-optee64"
 
 ARMTF_ARGS_fvp-optee64 = " \
         BL32=${STAGING_DIR_HOST}/lib/firmware/tee.bin \

@@ -14,7 +14,7 @@ PV_fvp-optee64 = "hikey+git${SRCPV}"
 
 S = "${WORKDIR}/git/"
 
-EDK2_ARGS = "${@bb.fatal('EDK2 not supported on this platform')}"
+COMPATIBLE_MACHINE = "(fvp|hikey)-optee64"
 
 # Build configuration for 64-bit FVP.
 EDK2_ARGS_fvp-optee64 = " \
