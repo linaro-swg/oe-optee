@@ -2,8 +2,8 @@
 
 This is a sample layer/distro for OpenEmbedded to recreate the optee
 development and test environments.  The primary development
-environment for optee is (described in its
-documentation)[https://github.com/OP-TEE/optee_os/blob/master/README.md].
+environment for optee is [described in its
+documentation](https://github.com/OP-TEE/optee_os/blob/master/README.md).
 Although made for development, this OE tree is **not** supported.
 
 ## Goals
