@@ -68,9 +68,6 @@ OE has very few system requirements, generally you'll need cpio and
 texinfo.  It will print early on any packages that are missing.  Most
 of everything else that it needs will be downloaded and built.
 
-Building optee-os, however, will require the host's python to have
-pycrypto installed.
-
 To build this image, you'll need about 15-20 GB of space.  If you
 disable 'rm-work' to leave build trees expanded, you'll need a lot
 more.

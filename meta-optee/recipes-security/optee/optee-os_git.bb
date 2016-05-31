@@ -5,8 +5,7 @@ SUMMARY = "OPTEE OS"
 DESCRIPTION = "OPTEE OS"
 HOMEPAGE = "http://www.optee.org/"
 LICENSE = "BSD"
-# SECTION = ""
-# DEPENDS = ""
+DEPENDS = "python-pycrypto-native"
 
 # The variables are a bit overwhelming to try and set with Bitbake's
 # variable expansion, so just make the decision in Python.
@@ -46,6 +45,7 @@ python () {
 }
 
 inherit deploy
+inherit pythonnative
 
 SRC_URI = "git://github.com/OP-TEE/optee_os.git"
 SRCREV = "6732c943e59698dd4318f84dec276390f66ffac2"
