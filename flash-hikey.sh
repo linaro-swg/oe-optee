@@ -10,4 +10,5 @@ fastboot flash -u bl1 $deploy/bl1.bin
 fastboot flash -u fastboot $deploy/fip.bin
 fastboot flash -u boot $deploy/optee-image-hikey-optee64.uefi
 
+sleep 2
 fastboot reboot
