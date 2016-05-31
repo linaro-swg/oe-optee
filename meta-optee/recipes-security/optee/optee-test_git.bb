@@ -16,6 +16,8 @@ PR = "r0"
 PV = "2.0.0+git${SRCPV}"
 LIC_FILES_CHKSUM = "file://LICENSE.md;md5=daa2bcccc666345ab8940aab1315a4fa"
 
+inherit pythonnative
+
 S = "${WORKDIR}/git"
 
 do_compile () {

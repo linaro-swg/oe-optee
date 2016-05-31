@@ -4,6 +4,7 @@
 SUMMARY = "OPTEE Client libs"
 HOMEPAGE = "http://www.optee.org/"
 LICENSE = "BSD"
+DEPENDS = "python-pycrypto-native"
 
 SRC_URI = " \
     git://github.com/OP-TEE/optee_client.git \
@@ -18,6 +19,7 @@ S = "${WORKDIR}/git"
 B = "${WORKDIR}/git/out"
 
 inherit update-rc.d
+inherit pythonnative
 
 # Note that the Makefiles for optee-client are broken, and O= must be
 # a relative path.  To make this work, just don't set anything, and
