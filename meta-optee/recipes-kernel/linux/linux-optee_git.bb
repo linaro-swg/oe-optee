@@ -3,7 +3,7 @@
 
 require linux-optee.inc
 
-SRCREV = "14c79ba4cacd131917e391cb56e4f5e7e5101adb"
+SRCREV = "2faeddf56a2b168559d77600dedc24f626c68586"
 PV = "4.5+git${SRCPV}"
 
 SRCREV_hikey-optee64 = "4ac587ba47e48e7f169e1921ae269e9137f53887"
