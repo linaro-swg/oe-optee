@@ -7,6 +7,10 @@ HOMEPAGE = "http://www.optee.org/"
 LICENSE = "BSD"
 DEPENDS = "python-pycrypto-native python-wand-native"
 
+# Needed so that python-wand can find the installed imagemagick
+# install.
+export MAGICK_HOME="${STAGING_DIR_NATIVE}${prefix}"
+
 # The variables are a bit overwhelming to try and set with Bitbake's
 # variable expansion, so just make the decision in Python.
 python () {
