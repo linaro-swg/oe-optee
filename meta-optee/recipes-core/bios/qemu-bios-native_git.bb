@@ -3,16 +3,18 @@ LICENSE = "BSD"
 
 inherit native
 
-SRCREV = "7a495a6c8fc977febb1866eca3cb9e903769cd17"
+SRCREV = "a1d0240357f977b51cc530a5e7f67f20e401a5b2"
 SRC_URI = "git://github.com/linaro-swg/bios_qemu_tz_arm.git \
-           file://0001-Create-LICENSE-file.patch \
 "
 PV = "0.0+git${SRCPV}"
 
 # TODO: This package is missing any license information.  We can use a
 # source file (which has the license), but this will be wrong when the
 # revision changes.
-LIC_FILES_CHKSUM = "file://LICENSE;md5=575c7e7a06fe1ef5c0548e596ade2a82"
+LIC_FILES_CHKSUM = " \
+    file://COPYING;md5=7d06880e6eb0a003bc215cd7efa30c6e \
+    file://COPYING.NEWLIB;md5=fced02ba02d66f274d4847d27e80af74 \
+"
 
 S = "${WORKDIR}/git/"
 

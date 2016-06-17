@@ -52,7 +52,7 @@ inherit deploy
 inherit pythonnative
 
 SRC_URI = "git://github.com/OP-TEE/optee_os.git"
-SRCREV = "a43532cf9192ff7af3f621b963f1f4dc38f91d39"
+SRCREV = "694bf2a0a30582a20a51972e046a22e1c56cd953"
 PR = "r0"
 PV = "2.0.0+git${SRCPV}"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=69663ab153298557a59c67a60a743e5b"
