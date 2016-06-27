@@ -38,7 +38,7 @@ EDK2_IMAGE_hikey-optee64 = "Build/HiKey/RELEASE_GCC49/FV/BL33_AP_UEFI.fd"
 # inherit deploy
 
 do_configure () {
-    ${BASH} edksetup.sh
+    ${SHELL} edksetup.sh
     oe_runmake -C ${S}/BaseTools
 }
 
