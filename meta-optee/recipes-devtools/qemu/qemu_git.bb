@@ -11,9 +11,9 @@ DEPENDS = "glib-2.0 zlib pixman"
 inherit autotools
 BBCLASSEXTEND = "native nativesdk"
 
-SRCREV = "c7288767523f6510cf557707d3eb5e78e519b90d"
+SRCREV = "53279c76cf071fed07a336948d37c72e3613e0b7"
 SRC_URI = "git://github.com/qemu/qemu.git"
-PV = "2.5.0+git${SRCPV}"
+PV = "2.7.0+git${SRCPV}"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=441c28d2cf86e15a37fa47e15a72fbac \
                     file://COPYING.LIB;md5=79ffa0ec772fa86740948cb7327a0cc7 "
@@ -26,7 +26,7 @@ S = "${WORKDIR}/git/"
 
 do_configure () {
     (cd ${S}; git submodule update --init dtc)
-    ${S}/configure --target-list=arm-softmmu --extra-cflags="-Wno-error" \
+    ${S}/configure --target-list=arm-softmmu,aarch64-softmmu --extra-cflags="-Wno-error" \
         --prefix=${prefix} --sysconfdir=${sysconfdir} --libexecdir=${libexecdir} \
         --localstatedir=${localstatedir} \
 	--enable-fdt \
