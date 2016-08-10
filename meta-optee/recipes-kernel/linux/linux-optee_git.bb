@@ -9,6 +9,7 @@ PV = "4.5+git${SRCPV}"
 SRC_URI = "git://github.com/linaro-swg/linux.git;branch=optee"
 
 SRC_URI_append_qemu-optee32   = " file://qemu.conf"
+SRC_URI_append_qemu-optee64   = " file://qemu.conf"
 SRC_URI_append_fvp-optee64    = " file://fvp.conf"
 SRC_URI_append_hikey-optee64 = " file://hikey.conf"
 SRC_URI_append_hikey-optee64 = " file://usb_net_dm9601.conf"

@@ -12,6 +12,9 @@ def get_optee_configs(d):
     if machine == "qemu-optee32":
         return ("arch/arm/configs/vexpress_defconfig " +
             "{0}/qemu.conf").format(d.getVar("WORKDIR", True))
+    elif machine == "qemu-optee64":
+        return ("arch/arm64/configs/defconfig " +
+            "{0}/qemu.conf").format(d.getVar("WORKDIR", True))
     elif machine == "fvp-optee64":
         return ("arch/arm64/configs/defconfig " +
             "{0}/fvp.conf").format(d.getVar("WORKDIR", True))
