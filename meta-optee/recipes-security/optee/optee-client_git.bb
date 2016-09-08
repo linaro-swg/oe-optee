@@ -3,17 +3,17 @@
 
 SUMMARY = "OPTEE Client libs"
 HOMEPAGE = "http://www.optee.org/"
-LICENSE = "BSD"
+LICENSE = "BSD | LGPLv2"
 DEPENDS = "python-pycrypto-native"
 
 SRC_URI = " \
     git://github.com/OP-TEE/optee_client.git \
     file://tee-supplicant.init \
 "
-SRCREV = "17d1addc465a667f375837cdbe4fa7ebac08539b"
+SRCREV = "658ae538f76a2624b7f9c40539a600d281d872b4"
 PR = "r0"
 PV = "2.1.0+git${SRCPV}"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=69663ab153298557a59c67a60a743e5b"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=a6d62e1b5fef18a1854bd538e3160d7c"
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/git/out"
