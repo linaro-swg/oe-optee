@@ -11,7 +11,7 @@ DEPENDS = "glib-2.0 zlib pixman"
 inherit autotools
 BBCLASSEXTEND = "native nativesdk"
 
-SRCREV = "53279c76cf071fed07a336948d37c72e3613e0b7"
+SRCREV = "bbc4c3f4f3c624e2de64fdcb79f4dd8c1a508e9d"
 SRC_URI = "git://github.com/qemu/qemu.git"
 PV = "2.7.0+git${SRCPV}"
 

@@ -5,7 +5,7 @@ SUMMARY = "Grub cross compiled for ARM"
 LICENSE = "GPLv3"
 DEPENDS = ""
 
-SRCREV = "b524fa27f56381bb0efa4944e36f50265113aee5"
+SRCREV = "a0bf403f66dbaca4edd8e667bfc397dd91c8d71c"
 SRC_URI = " \
     git://git.savannah.gnu.org/grub.git \
     file://grub.configfile \

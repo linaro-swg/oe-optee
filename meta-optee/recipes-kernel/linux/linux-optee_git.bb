@@ -3,7 +3,7 @@
 
 require linux-optee.inc
 
-SRCREV = "f638fdf67d01d68ae54c43db8d3e6381fd2608c3"
+SRCREV = "a11f5a881d7f891ac4c12c45b76895d4d48f93e8"
 PV = "4.5+git${SRCPV}"
 
 SRC_URI = "git://github.com/linaro-swg/linux.git;branch=optee"

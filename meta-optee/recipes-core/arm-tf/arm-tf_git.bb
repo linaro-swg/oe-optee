@@ -11,7 +11,7 @@ SRCREV_fvp-optee64 = "69fb412f18ee40f9f7707da0d7411aada5ab60a0"
 SRC_URI_fvp-optee64 = "git://github.com/linaro-swg/arm-trusted-firmware.git;branch=optee_paged_armtf_v1.2"
 PV_fvp-optee64 = "1.2+git${SRCPV}"
 
-SRCREV_hikey-optee64 = "bdec62eeb8f3153a4647770e08aafd56a0bcd42b"
+SRCREV_hikey-optee64 = "cb6cd2bc548184462871bc5e30190941df0aa4da"
 SRC_URI_hikey-optee64 = "git://github.com/96boards-hikey/arm-trusted-firmware.git;branch=hikey"
 PV_hikey-optee64 = "1.1+git${SRCPV}"
 

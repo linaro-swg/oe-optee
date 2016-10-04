@@ -11,7 +11,7 @@ DEPENDS = "optee-os optee-client"
 
 SRC_URI = "git://github.com/OP-TEE/optee_test.git \
 "
-SRCREV = "327672cda23a15b5aa743177f839099c003d9482"
+SRCREV = "a00eeb15ddfaa5b7d2cb340faeb36748d5aabffb"
 PR = "r0"
 PV = "2.1.0+git${SRCPV}"
 LIC_FILES_CHKSUM = "file://LICENSE.md;md5=daa2bcccc666345ab8940aab1315a4fa"
