@@ -30,6 +30,16 @@ python () {
              " ta-targets=ta_arm32").format(d.getVar("HOST_PREFIX", True)))
         d.setVar("OPTEE_SHORT_MACHINE", "vexpress")
         d.setVar("OPTEE_ARCH", "arm32")
+    elif machine == "qemu-optee64":
+        d.setVar("EXTRA_OEMAKE",
+            ("PLATFORM=vexpress-qemu_armv8a" +
+             " CFG_ARM64_core=y" +
+             " CFG_ARM32_core=n" +
+             " CROSS_COMPILE_core={0}" +
+             " CROSS_COMPILE_ta_arm64={0}" +
+             " ta-targets=ta_arm64").format(d.getVar("HOST_PREFIX", True)))
+        d.setVar("OPTEE_SHORT_MACHINE", "vexpress")
+        d.setVar("OPTEE_ARCH", "arm64")
     elif machine == "fvp-optee64":
         d.setVar("EXTRA_OEMAKE",
             ("V=1 PLATFORM=vexpress-fvp" +
@@ -58,9 +68,9 @@ inherit deploy
 inherit pythonnative
 
 SRC_URI = "git://github.com/OP-TEE/optee_os.git"
-SRCREV = "ca6737b41c68973c6a0bb271906423c9e2d4e7db"
+SRCREV = "287359f44187396c3e12d1bab257ce5918a58cb0"
 PR = "r0"
-PV = "2.0.0+git${SRCPV}"
+PV = "2.1.0+git${SRCPV}"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=69663ab153298557a59c67a60a743e5b"
 
 S = "${WORKDIR}/git"
